@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Project do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "considers a project with no tasks to be done" do
+    project = Project.new
+    expect(project.done?).to be_truthy
+  end
 end
