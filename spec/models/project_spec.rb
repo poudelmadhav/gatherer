@@ -19,6 +19,13 @@ RSpec.describe Project do
     expect(project).to be_done
   end
 
+  it "properly handles the blank project"  do
+    expect(project.completed_velocity).to eq(0)
+    expect(project.current_rate).to eq(0)
+    expect(project.projected_days_remaining).to be_nan
+    expect(project).not_to be_on_schedule
+  end
+
   describe "estimates" do
     let(:project) { Project.new }
     let(:newly_done) { Task.new(size: 3, completed_at: 1.day.ago) }
