@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Task do
+RSpec.describe Task, type: :model do
   let(:task) { Task.new }
 
   it "does not have a new task as complete" do
